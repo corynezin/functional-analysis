@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\title{Functional Analysis Homework 1: Solutions}
+\author{Cory Nezin}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Prove that
+$$ z_1\overline{z_2} = \sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2| \text{ for } 
+z_1,z_2 \in \mathbb{C}$$
+Proof:\\
+First note that 
+$$\sum_{k=0}^3 j^k z = z\sum_{k=0}^3j^k = z(1 + j -1 -j) = 0 \text{ for } z \in \mathbb{C}$$
+and
+$$\sum_{k=0}^3 j^{2k} z = z\sum_{k=0}^3j^k = z(1 -1 +1 -1) = 0 \text{ for } z \in \mathbb{C}$$
+\begin{align*}
+\sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2| &= \frac{1}{4}\sum_{k=0}^3 j^k (z_1+j^kz_2)\overline{(z_1+j^kz_2)}\\
+&= \frac{1}{4}\sum_{k=0}^3 j^k [z_1\overline{z_1} + j^{-k}z_1\overline{z_2} + j^kz_2\overline{z_1} + z_2\overline{z_2}]\\
+&= 0 + \frac{1}{4}\sum_{k=0}^3 z_1\overline{z_2} + 0 + 0\\
+&= z_1\overline{z_2}
+\end{align*}
+$\blacksquare$
+\item Let $(V,\langle\cdot,\cdot\rangle)$ be a complex inner product space.  Prove that\\
+$$\langle \vec{w},\vec{v}\rangle = \sum_{k=0}^3 \frac{j^k}{4} \lVert \vec{w} + 
+j^k\vec{v}\rVert^2$$
+Similar to the last proof:
+\begin{align*}
+\sum_{k=0}^3 \frac{j^k}{4}\lVert \vec{w} + j^k\vec{v}\rVert^2 &= \frac{1}{4}\sum_{k=0}^3 j^k \langle \vec{w}+j^k\vec{v},\vec{w}+j^k\vec{v}\rangle\\
+&= \frac{1}{4}\sum_{k=0}^3 j^k [\langle \vec{w},\vec{w} \rangle + \langle \vec{w},j^k\vec{v} \rangle + \langle j^k\vec{v},\vec{w} \rangle + \langle \vec{v}, \vec{v} \rangle]\\
+&= \frac{1}{4}\sum_{k=0}^3 j^k [\langle \vec{w},\vec{w} \rangle + j^{-k}\langle \vec{w},\vec{v} \rangle + j^k \langle \vec{v},\vec{w} \rangle + \langle \vec{v}, \vec{v} \rangle]\\
+&= 0 + \frac{1}{4}\sum_{k=0}^3 \langle \vec{w},\vec{v} \rangle + 0 + 0\\
+&= \langle \vec{w},\vec{v} \rangle
+\end{align*}
+$\blacksquare$
+\end{enumerate}
+\end{enumerate}
+\end{document}
