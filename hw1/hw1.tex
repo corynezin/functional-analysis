@@ -9,7 +9,7 @@
 \item
 \begin{enumerate}
 \item Prove that
-$$ z_1\overline{z_2} = \sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2| \text{ for } 
+$$ z_1\overline{z_2} = \sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2|^2 \text{ for } 
 z_1,z_2 \in \mathbb{C}$$
 Proof:\\
 First note that 
@@ -17,7 +17,7 @@ $$\sum_{k=0}^3 j^k z = z\sum_{k=0}^3j^k = z(1 + j -1 -j) = 0 \text{ for } z \in 
 and
 $$\sum_{k=0}^3 j^{2k} z = z\sum_{k=0}^3j^{2k} = z(1 -1 +1 -1) = 0 \text{ for } z \in \mathbb{C}$$
 \begin{align*}
-\sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2| &= \frac{1}{4}\sum_{k=0}^3 j^k (z_1+j^kz_2)\overline{(z_1+j^kz_2)}\\
+\sum_{k=0}^3 \frac{j^k}{4}|z_1 + j^kz_2|^2 &= \frac{1}{4}\sum_{k=0}^3 j^k (z_1+j^kz_2)\overline{(z_1+j^kz_2)}\\
 &= \frac{1}{4}\sum_{k=0}^3 j^k [z_1\overline{z_1} + j^{-k}z_1\overline{z_2} + j^kz_2\overline{z_1} + z_2\overline{z_2}]\\
 &= 0 + \frac{1}{4}\sum_{k=0}^3 z_1\overline{z_2} + 0 + 0\\
 &= z_1\overline{z_2}
