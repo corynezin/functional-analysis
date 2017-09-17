@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\norm}[1]{\left \lVert#1\right\rVert_\infty}
+\title{Functional Analysis Homework 2: Solutions}
+\author{Cory Nezin}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Prove that $\norm{\vec{z}} = max\{|z_k|, 1\leq k\leq n\} \text{ }(\text{denoted } max{|z_k|})$ is a norm on $\mathbb{C}^n$\\
+Proof:\\
+Since $|z_k| \geq 0 \text{ } \forall z_k \in \mathbb{C}, max{|z_k|} \geq 0 \rightarrow \norm{z} \geq 0$ (1)\\
+$\norm{z} = 0 \rightarrow |z_k| \leq 0 \text{ }\forall k$.  Since $|z_k| \geq 0$, then by trichotemy, $|z_k| = 0 \text{ } \forall k \rightarrow z_k = 0 \text{ }\forall k$ (2)\\
+First we show that multiplication of positive scalars by a positive scalar commutes with $max$:\\
+$A = max\{a_k\} \Leftrightarrow A \geq a_k \Leftrightarrow \alpha A \geq \alpha a_k \Leftrightarrow \alpha A = max\{\alpha a_k\}$ Now,\\
+$\norm{\alpha z} = max\{|\alpha z_k|\} = max\{|\alpha| |z_k|\} = |\alpha|max\{|z_k|\} = |\alpha|\norm{z_k}$ (3)\\
+By the triangle inequality, $|x_k+y_k| \leq |x_k| + |y_k|\rightarrow$\\
+$\norm{\vec{x}+\vec{y}} = max\{|x_k+y_k|\} \leq max\{|x_k|+|y_k|\}$\\
+Let $C = \{|x_i| + |y_j|; x_i,y_j \in \vec{x},\vec{y}; i,j \leq n\}$\\
+Let $c = \{|x_i| + |y_i|; x_i,y_i \in \vec{x},\vec{y}; i \leq n\}$\\
+since $c \subseteq C$ and both sets are finite, then by Homework 3 (Math Analysis) $\sup c \leq \sup C \rightarrow max\{c\} \leq max\{C\}$, or\\
+$max\{c\} = max\{|x_k|+|y_k|\} \leq max\{C\} = max\{|x_k|\} + max\{|y_k|\} = \norm{x} + \norm{y}$ (4) $\blacksquare$
+\item $f \in l^\infty(\mathbb{Z}) = \{f:\mathbb{Z} \rightarrow \mathbb{C} \text{ such that } f(\mathbb{Z}) \text{ is a bounded subset of } \mathbb{C}\}$\\
+$\norm{f} = \sup\{|f(k)|:k\in\mathbb{Z}\}$.  Prove that $\norm{.}$ is a norm on $l^\infty(\mathbb{Z})$.\\
+Proof:\\
+Since $|f(k)| \geq 0, \sup\{|f(k)|\} \geq 0 \rightarrow \norm{f} \geq 0$ (1)\\
+$\norm{f} = 0 \rightarrow \sup\{|f(k)|\} = 0 \rightarrow |f(k)| \leq 0$.  Since $|f(k)| \geq 0$, by trichotemy we have $|f(k)| = 0$ (2)\\ 
+$\norm{\alpha f} = \sup\{|\alpha f(k)|\} = \sup\{|\alpha||f(k)|\} =|\alpha|\sup\{|f(k)|\} = \alpha\norm{f}$ (3)\\
+By the triangle ineuqality we have\\
+$\norm{f+g} = \sup\{|f(k)+g(k)|\} \leq \sup\{|f(k)|+|g(k)|\}$\\
+Let $C = \{|f(i)| + |g(j)|; i,j \in \mathbb{Z}\}$\\
+Let $c = \{|f(i)| + |g(i)|; i \in \mathbb{Z}\}$\\
+Since $c \subseteq C$ and both sets are bounded, then by Homework 3 (Math Analysis) $\sup c \leq \sup C \rightarrow \norm{f+g} \leq \norm{f} + \norm{g}$ (4) $\blacksquare$
+\end{enumerate}
+\end{document}
