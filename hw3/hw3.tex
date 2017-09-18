@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\norm}[1]{\left \lVert#1\right\rVert}
+\title{Functional Analysis Homework 3: Solutions}
+\author{Cory Nezin}
+\begin{document}
+\maketitle
+Let $(E,\norm{\text{ }}) be a normed linear space$.
+\begin{enumerate}
+\item Porve that $|\norm{x}-\norm{y}| \leq \norm{x-y}$\\
+Proof:\\
+By the triangle inequality, $\norm{x+y} \leq \norm{x} + \norm{y}$\\
+So, $\norm{(x-y)+y} \leq \norm{x-y} + \norm{y}$\\
+And $\norm{x-y} \geq \norm{x}-\norm{y}$\\
+Similarly, $\norm{y-x} \geq \norm{y}-\norm{x} \rightarrow \norm{x-y} \geq -(\norm{x}-\norm{y})$
+Thus $\norm{x-y} \geq |\norm{x}-\norm{y}|$ $\blacksquare$
+\item If $\lim_{n\to\infty}x_n = x, x_n,x \in E \text{ }\forall n$, then show that $\lim_{n\to\infty}\norm{x_n} = \norm{x}$.\\
+Proof:\\
+$\forall \epsilon > 0, \exists N_\epsilon \text{ such that } \forall n > N_\epsilon, \norm{x-x_n} < \epsilon$\\
+By the last problem, this implies that $|\norm{x}-\norm{x_n}| \leq \epsilon$ under the same conditions.  So $\lim_{n\to\infty}\norm{x_n} = \norm{x}$ $\blacksquare $
+\item $\lim_{n\to\infty}\alpha_n = \alpha$, $\lim_{n\to\infty}x_n = x$ where $\alpha_n,\alpha \in \mathbb{C}$.  Prove that $\lim_{n\to\infty}\alpha_nx_n = \alpha x$\\
+Proof:\\
+By definition of limits, 
+$\forall \sqrt{\epsilon} > 0, \exists N_\epsilon \text{ such that } \forall n > N_{\sqrt{\epsilon}}$,\\
+$|\alpha_n-\alpha| < \sqrt{\epsilon}$\\
+$\norm{x_n-x} < \sqrt{\epsilon}$\\
+And $|\alpha_n-\alpha| \norm{x_n-x} < \epsilon$\\
+By properties of norms, this expression is equal to $\norm{(\alpha_n-\alpha)(x_n-x)}$\\
+So $\lim_{n\to\infty}((\alpha_n-\alpha)(x_n-x)) = 0$\\
+Expanding the expression we have $\lim_{n\to\infty}(\alpha_nx_n - \alpha_nx-\alpha x_n + \alpha x) = 0$\\
+Which is equal to \\$\lim_{n\to\infty}\alpha_nx_n - \lim_{n\to\infty}\alpha_nx-\lim_{n\to\infty}\alpha x_n + \lim_{n\to\infty}\alpha x = 0 \rightarrow$\\
+$\lim_{n\to\infty}\alpha_nx_n = x\lim_{n\to\infty}\alpha_n + \alpha\lim_{n\to\infty}x_n - \alpha x = 2\alpha x -\alpha x = \alpha x$ $\blacksquare$\\
+\item State the converse of (2).\\
+If $\lim_{n\to\infty}\norm{x_n} = \norm{x}$, $\lim_{n\to\infty}x_n = x, x_n,x \in E \text{ }\forall n$\\
+This is clearly not true.  Take the case $x_n = (-1)^n$.  The limit of the norms is 1 (the norms are always 1) but the sequence does not converge. $\blacksquare$
+\end{enumerate}
+\end{document}
