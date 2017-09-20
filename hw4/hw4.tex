@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\norm}[1]{\left \lVert#1\right\rVert_\infty}
+\title{Mathematical Analysis Homework 4: Solutions}
+\author{Cory Nezin}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Let $\{a_n\}_{n=1}^\infty \subseteq \mathbb{R}^m$ be Cauchy with respect to $\norm{\text{ }}$.  Prove that $\{a_{nk}\}_{n=1}^\infty \subseteq \mathbb{R}$ is Cauchy for each $k = 1,...,m $ where $ a_n = (a_{n1},a_{n2},...,a_{nm})$\\
+Proof:\\
+$\{a_n\}_{n=1}^\infty \subseteq \mathbb{R}^m$ is Cauchy $\rightarrow$ $\forall \epsilon > 0, \exists N\in \mathbb{N}$ such that $\forall n,p > N$, $\norm{a_n-a_p} < \epsilon$.\\
+Since $a_n-a_p\in \mathbb{R}^m$ is finite,
+\begin{align*}
+  \norm{a_n-a_p} &= \sup\{|a_n-a_p|;n,p>N\} \\
+  &= max\{|a_n-a_p|;n,p>N\} \\
+  &= max\{|a_{n1}-a_{p1}|,|a_{n2}-a_{p2}|,...,|a_{np}-a_{pm}|\}\\
+  &< \epsilon
+\end{align*}
+Or, $|a_{nk} - a_{pk}| < \epsilon \text{ } \forall k \in \{1,...,m\};\text{ }\forall n,m > N$\\
+So $\{a_{nk}\}_{n=1}^\infty$ is Cauchy. $\blacksquare$
+\item
+Prove that $(\mathbb{R}^m,\norm{\text{ }})$ is a complete normed linear space assuming that $\mathbb{R}$ is Cauchy complete.\\
+Proof:\\
+From the previous problem, if $\{a_n\}_{n=1}^\infty$ is Cauchy, then $\{a_{nk}\}_{n=1}^\infty\in\mathbb{R}$ is a Cauchy sequence for fixed $k\in\{1,...,m\}$\\
+By Cauchy completeness of $\mathbb{R}$, this sequence necessarily converges to some value $a_{\infty k} \in \mathbb{R}$.  This implies $\forall \epsilon >0, \exists N\in\mathbb{N},a_{\infty k}\in\mathbb{R} \text{ such that } |a_{\infty k}-a_{nk}| < \epsilon; n>N$
+Therefore $\epsilon > |a_{\infty k}-a_{nk}| \text{ } \forall k \in \{1,...,m\} \rightarrow \epsilon > max\{|a_{n1}-a_{p1}|,|a_{n2}-a_{p2}|,...,|a_{np}-a_{pm}|\} = \norm{a_\infty-a_n}$\\
+Since $a_\infty \in \mathbb{R}^m$, $(\mathbb{R}^m,\norm{\text{ }})$ is Cauchy complete. $\blacksquare$\\
+\end{enumerate}
+\end{document}
